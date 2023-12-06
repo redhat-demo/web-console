@@ -4,7 +4,7 @@ FROM debian:buster-20201012-slim as builder
 ARG WEBCONSOLE_VERSION=0.9.7
 
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y unzip=6.0-23+deb10u1 wget=1.20.1-1.1
+RUN apt-get install -y unzip wget
 
 RUN wget https://github.com/nickola/web-console/releases/download/v${WEBCONSOLE_VERSION}/webconsole-${WEBCONSOLE_VERSION}.zip
 RUN unzip webconsole-${WEBCONSOLE_VERSION}.zip
