@@ -14,3 +14,6 @@ RUN sed 's/^$USER.*/$USER = getenv("USER");;/' /webconsole/webconsole.php \
 
 FROM php:${PHP_VERSION}-apache-buster
 COPY --from=builder /index.php /var/www/html
+
+COPY apache/ports.conf /etc/apache2/ports.conf
+COPY apache/000-default.conf /etc/apache2/sites-enabled/000-default.conf
